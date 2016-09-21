@@ -24,10 +24,23 @@ body {
 .banner-img {
   background: url("../resource/img/jjby-banner-01.png") no-repeat left;
   background-size: contain;
-  width: 50%;
-  height: 80%;
-  margin: 1% 0 1% 5%;
+  width: 90%;
+  height: 90%;
+  /*margin: 1% 0 1% 5%;*/
+  margin-left: 10%;
   float: left;
+}
+
+ul.vertical-middle {
+  display: table;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+li.vertical-middle {
+  display: table-cell;
+  vertical-align: middle;
 }
 
 .container {
@@ -48,8 +61,8 @@ body {
 .top-download-btn {
   background: url("../resource/img/jjby-btn-01.png") no-repeat right;
   background-size: contain;
-  width: 30%;
-  height: 80%;
-  margin: 1% 0;
+  width: 80%;
+  height: 90%;
+  /*margin: 1% 0;*/
   float: right;
 }
