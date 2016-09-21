@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+.banner {
+  position: relative;
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 6%;
+}
+
+@media screen and (max-height: 600px) {
+  .banner {
+    height: 10%;
+  }
+}
+
+.banner-img {
+  background: url("../resource/img/jjby-banner-01.png") no-repeat left;
+  background-size: contain;
+  width: 50%;
+  height: 80%;
+  margin: 1% 0 1% 5%;
+  float: left;
+}
+
+.container {
+  width: 100%;
+  /*height: 100%;*/
+}
+
+.one-page-bg {
+  background: url("../resource/img/jjby-bg-01.jpg") no-repeat;
+  background-size: cover;
+}
+
+.top-download-btn {
+  background: url("../resource/img/jjby-btn-01.png") no-repeat right;
+  background-size: contain;
+  width: 30%;
+  height: 80%;
+  margin: 1% 0;
+  float: right;
+}
