@@ -8,7 +8,7 @@
 </head>
 
 <body>
-  <div class="container one-page-bg" id="container">
+  <div class="container one-page-bg-1" id="container">
     <div class="banner">
       <div class="banner-img"></div>
       <a class="top-download-btn" href="http://res.digitcube.net/assets/buyu/512255_fish-zrqpaibeiv2.0.5.0-0910.apk" target="_blank" id="downloadFile">
@@ -39,7 +39,7 @@
   function eventCount(type) {
     var search = document.location.search.slice(1)
     if (search !== '') {
-      var info = 'page-id:jjby-d-01 page-assets-id:jjby-d-01 event-id:' + type + 'uid:' + search
+      var info = 'page-id:jjby-d2-02 page-assets-id:jjby-d2-02 event-id:' + type + 'uid:' + search
       var img = new Image()
       img.src = 'http://119.147.212.250:9191/log/js?data=' + encodeURIComponent(info)
     }
@@ -47,7 +47,7 @@
   function downloadFile() {
     eventCount('download')
     pyRegisterCvt()
-    MtaH5.clickStat('Download')
+    MtaH5.clickStat('download-jjby-d2-02')
   }
   document.addEventListener('DOMContentLoaded', function(event) {
     eventCount('load')

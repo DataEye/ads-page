@@ -40,6 +40,11 @@ body {
   background-size: cover;
 }
 
+.one-page-bg-1 {
+  background: url("../resource/img/jjby-d2-02.jpg") no-repeat;
+  background-size: cover;
+}
+
 .top-download-btn {
   background: url("../resource/img/jjby-btn-01.png") no-repeat right;
   background-size: contain;
