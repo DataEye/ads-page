@@ -44,6 +44,7 @@ li.vertical-middle {
 }
 
 .container {
+  position: relative;
   width: 100%;
   /*height: 100%;*/
 }
@@ -55,6 +56,11 @@ li.vertical-middle {
 
 .one-page-bg-1 {
   background: url("../resource/img/jjby-d2-02.jpg") no-repeat;
+  background-size: cover;
+}
+
+.one-page-bg-2 {
+  background: url("../resource/img/tw-d1-01.jpg") no-repeat;
   background-size: cover;
 }
 
