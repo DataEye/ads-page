@@ -64,6 +64,11 @@ li.vertical-middle {
   background-size: cover;
 }
 
+.one-page-bg-3 {
+  background: url("../resource/img/tw-d1-03.jpg") no-repeat;
+  background-size: cover;
+}
+
 .top-download-btn {
   background: url("../resource/img/jjby-btn-01.png") no-repeat right;
   background-size: contain;
