@@ -31,6 +31,16 @@ body {
   float: left;
 }
 
+.banner-img-2 {
+  background: url("../resource/img/twzw-banner-01.png") no-repeat left;
+  background-size: contain;
+  width: 90%;
+  height: 90%;
+  /*margin: 1% 0 1% 5%;*/
+  margin-left: 10%;
+  float: left;
+}
+
 ul.vertical-middle {
   display: table;
   margin: 0;
@@ -66,6 +76,11 @@ li.vertical-middle {
 
 .one-page-bg-3 {
   background: url("../resource/img/tw-d1-03.jpg") no-repeat;
+  background-size: cover;
+}
+
+.one-page-bg-4 {
+  background: url("../resource/img/tw-d1-05.jpg") center center no-repeat;
   background-size: cover;
 }
 
