@@ -6,6 +6,12 @@
   <title>塔王之王</title>
   <link rel="stylesheet" type="text/css" href="../style/common.css">
   <style>
+    #twzw-btn-0 {
+      height: 100%;
+      position: absolute;
+      width: 100%;
+      z-index: 999;
+    }
     #twzw-btn-1 {
       background: url(../resource/img/tw-d2-01.png) no-repeat;
       background-size: contain;
@@ -31,6 +37,7 @@
 
 <body>
   <div class="container one-page-bg-3" id="container">
+    <a id="twzw-btn-0" href="http://res.digitcube.net/assets/twzw/aibei_twzw_8_1.15.2_197.apk" target="_blank"></a>
     <a id="twzw-btn-1" href="http://res.digitcube.net/assets/twzw/aibei_twzw_8_1.15.2_197.apk" target="_blank"></a>
     <a id="twzw-btn-2" href="http://res.digitcube.net/assets/twzw/aibei_twzw_8_1.15.2_197.apk" target="_blank"></a>
   </div>
@@ -71,12 +78,16 @@
   document.addEventListener('DOMContentLoaded', function(event) {
     eventCount('load')
   })
+  var btn0 = document.querySelector('#twzw-btn-0')
+  btn0.addEventListener('click', function() {
+    downloadFile()
+  })
   var btn = document.querySelector('#twzw-btn-1')
   btn.addEventListener('click', function() {
     downloadFile()
   })
-  var btn = document.querySelector('#twzw-btn-2')
-  btn.addEventListener('click', function() {
+  var btn1 = document.querySelector('#twzw-btn-2')
+  btn1.addEventListener('click', function() {
     downloadFile()
   })
   var screenWidth = document.documentElement.clientWidth
