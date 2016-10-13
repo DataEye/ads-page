@@ -54,7 +54,7 @@
           <!-- <div class="ads-row p"> 84.2M 300W+下载 <img src="img/start_icon.png"><img src="img/start_icon.png"><img src="img/start_icon.png"><img src="img/start_icon.png"><img src="img/start_icon.png"></div> -->
         </div>
       </div>
-      <a data-href="http://res.digitcube.net/assets/twzw/aibei_twzw_2_1.15.2_197.apk" class="btn game-download-link" id="downloadFile"><img src="img/icon_1.png"> 下载游戏</a>
+      <a data-href="http://res.digitcube.net/assets/twzw/aibei_twzw_15_1.15.2_197.apk" class="btn game-download-link" id="downloadFile"><img src="img/icon_1.png"> 下载游戏</a>
     </div>
     <div class="swiper-container swiper-container-horizontal">
       <!-- Additional required wrapper -->
@@ -186,7 +186,7 @@
   function eventCount(type) {
     var search = document.location.search.slice(1)
     if (search !== '') {
-      var info = 'page-id:twzw-d-01-aibei_twzw_2_1.15.2_197 page-assets-id:twzw-d-01-aibei_twzw_2_1.15.2_197 event-id:' + type + 'uid:' + search
+      var info = 'page-id:twzw-d-01-aibei_twzw_15_1.15.2_197 page-assets-id:twzw-d-01-aibei_twzw_15_1.15.2_197 event-id:' + type + 'uid:' + search
       var img = new Image()
       img.src = 'http://119.147.212.250:9191/log/js?data=' + encodeURIComponent(info)
     }
@@ -194,7 +194,7 @@
   function downloadFile() {
     eventCount('download')
     // pyRegisterCvt()
-    MtaH5.clickStat('download-twzw-d-01-aibei_twzw_2_1.15.2_197')
+    MtaH5.clickStat('download-twzw-d-01-aibei_twzw_15_1.15.2_197')
   }
   document.addEventListener('DOMContentLoaded', function(event) {
     eventCount('load')
@@ -221,7 +221,7 @@
 
     if (location.protocol.indexOf('http') > -1) {
       swiper.on('slideChangeStart', function() {
-        MtaH5.clickStat('swipe-twzw-d-01-aibei_twzw_2_1.15.2_197')
+        MtaH5.clickStat('swipe-twzw-d-01-aibei_twzw_15_1.15.2_197')
       })
 
     } else {

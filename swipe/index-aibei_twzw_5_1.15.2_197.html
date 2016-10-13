@@ -21,6 +21,12 @@
     text-align: center;
     margin: 10px;
   }
+  #twzw-btn-0 {
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    z-index: 0;
+  }
   </style>
   <script>
   void
@@ -43,6 +49,7 @@
 
 <body>
   <div class="mian-body">
+    <a id="twzw-btn-0" href="http://res.digitcube.net/assets/twzw/aibei_twzw_5_1.15.2_197.apk" target="_blank"></a>
     <div style="height:200px"></div>
     <div class="fexid-btn">
       <div class="ads-row tool-head">
@@ -203,6 +210,11 @@
   btn.addEventListener('click', function() {
     downloadFile()
   })
+
+  var btn0 = document.querySelector('#twzw-btn-0')
+  btn0.addEventListener('click', function() {
+    downloadFile()
+  })
   </script>
   <script>
   void
@@ -219,8 +231,10 @@
       prevButton: '.swiper-button-prev',
     })
 
-    if (location.protocol.indexOf('http') > -1) {
-      swiper.on('slideChangeStart', function() {
+    if (1) {
+      console.log(222)
+      mySwiper.on('slideChangeStart', function() {
+        console.log(1212)
         MtaH5.clickStat('swipe-twzw-d-01-aibei_twzw_5_1.15.2_197')
       })
 

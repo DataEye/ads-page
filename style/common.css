@@ -32,7 +32,7 @@ body {
 }
 
 .banner-img-2 {
-  background: url("../resource/img/twzw-banner-01.png") no-repeat left;
+  background: url("../resource/img/twzw-banner-02.png") no-repeat left;
   background-size: contain;
   width: 90%;
   height: 90%;
@@ -76,6 +76,11 @@ li.vertical-middle {
 
 .one-page-bg-3 {
   background: url("../resource/img/tw-d1-03.jpg") no-repeat;
+  background-size: cover;
+}
+
+.one-page-bg-3-fake {
+  background: url("../resource/img/tw-d1-03-fake.jpg") no-repeat;
   background-size: cover;
 }
 
