@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" charset="utf-8">
+  <title>塔王之王</title>
+  <link rel="stylesheet" type="text/css" href="../style/common.css">
+  <style>
+    .tw-d1-07 {
+      background: url("../resource/img/tw-d1-07.jpg") center center no-repeat;
+      background-size: cover;
+    }
+    #twzw-btn-1 {
+      background: url(../resource/img/tw-d5-01.png) no-repeat;
+      background-size: contain;
+      height: 7%;
+      position: absolute;
+      width: 60%;
+      z-index: 999;
+      left: 50%;
+      margin-left: -30%;
+    }
+    #twzw-btn-2 {
+      background: url(../resource/img/tw-d6-01.png) no-repeat;
+      background-size: contain;
+      height: 7%;
+      position: absolute;
+      width: 60%;
+      z-index: 999;
+      left: 50%;
+      margin-left: -30%;
+    }
+  </style>
+</head>
+
+<body>
+<div class="container tw-d1-07" id="container">
+  <ul class="banner vertical-middle" style="height: 4%;">
+    <li class="vertical-middle">
+      <div class="banner-img-2"></div>
+    </li>
+    <li class="vertical-middle">
+      <a class="top-download-btn" href="#" id="downloadFile">
+      </a>
+    </li>
+  </ul>
+  <a id="twzw-btn-1" href="#"></a>
+  <a id="twzw-btn-2" href="#"></a>
+</div>
+<!-- 品友统计 START -->
+<!--<script type="text/javascript">-->
+<!--var _py = _py || [];-->
+<!--_py.push(['a', 'jos..OW-TMvv8enLxUM-ohs69jX']);-->
+<!--_py.push(['domain','stats.ipinyou.com']);-->
+<!--_py.push(['e','']);-->
+<!-- -function(d) {-->
+<!--var s = d.createElement('script'),-->
+<!--e = d.body.getElementsByTagName('script')[0]; e.parentNode.insertBefore(s, e),-->
+<!--f = 'https:' == location.protocol;-->
+<!--s.src = (f ? 'https' : 'http') + '://'+(f?'fm.ipinyou.com':'fm.p0y.cn')+'/j/adv.js';-->
+<!--}(document);-->
+<!--function pyRegisterCvt(){-->
+<!--var w=window,d=document,e=encodeURIComponent;-->
+<!--var b=location.href,c=d.referrer,f,g=d.cookie,h=g.match(/(^|;)\s*ipycookie=([^;]*)/),i=g.match(/(^|;)\s*ipysession=([^;]*)/);-->
+<!--if (w.parent!=w){f=b;b=c;c=f;};u='//stats.ipinyou.com/cvt?a='+e('jos.Z7s.k0KIt1obUXqYTt1M21dZ5_')+'&c='+e(h?h[2]:'')+'&s='+e(i?i[2].match(/jump\%3D(\d+)/)[1]:'')+'&u='+e(b)+'&r='+e(c)+'&rd='+(new Date()).getTime()+'&e=';-->
+<!--(new Image()).src=u;-->
+<!--}-->
+<!--</script>-->
+<!--<noscript><img src="//stats.ipinyou.com/adv.gif?a=jos..OW-TMvv8enLxUM-ohs69jX&e=" style="display:none;"/></noscript>-->
+<!-- 品友统计 END -->
+
+<!-- 腾讯统计 START -->
+<script type="text/javascript" src="http://pingjs.qq.com/h5/stats.js" name="MTAH5" sid="500312391" cid="500312392" ></script>
+<!-- 腾讯统计 END -->
+
+<!-- 内部统计 START -->
+<script type="text/javascript">
+  function eventCount(name, type) {
+    var search = document.location.search.slice(1)
+    if (search !== '') {
+      var info = 'page-id:' + name + ' ' + 'page-assets-id:' + name + ' ' + 'event-id:' + type + ' ' + 'uid:' + search
+      var img = new Image()
+      img.src = 'http://119.147.212.250:9191/log/js?data=' + encodeURIComponent(info)
+    }
+  }
+</script>
+<!-- 内部统计 END -->
+
+<script type="text/javascript">
+  /* apk名字作为标识 */
+  var apkName = 'aibei_twzw_2_1.15.2_197'
+  var apkLink = 'http://res.digitcube.net/assets/twzw/' + apkName + '.apk'
+
+  function downloadStat() {
+    if ((location.protocol.indexOf('http') > -1 || location.protocol.indexOf('https') > -1) &&
+            (location.host.indexOf('localhost') === -1 && location.host.indexOf('127.0.0.1') === -1)) {
+      eventCount(apkName, 'download') /* 内部统计 下载 */
+//    pyRegisterCvt() /* 品友统计 */
+      MtaH5.clickStat('download-' + apkName) /* 腾讯统计 */
+    }
+  }
+
+  var btn = document.querySelector('#downloadFile')
+  btn.addEventListener('click', function() {
+    downloadStat()
+    window.open(apkLink)
+  })
+  var btn0 = document.querySelector('#twzw-btn-1')
+  btn0.addEventListener('click', function() {
+    downloadStat()
+    window.open(apkLink)
+  })
+  var btn1 = document.querySelector('#twzw-btn-2')
+  btn1.addEventListener('click', function() {
+    downloadStat()
+    window.open(apkLink)
+  })
+
+  document.addEventListener('DOMContentLoaded', function(event) {
+    eventCount('load') /* 内部统计 载入 */
+  })
+
+  var screenWidth = document.documentElement.clientWidth
+  var h = screenWidth * 2977 / 750
+  document.getElementById("container").style.height = h + 'px'
+
+  var btn1Height = h * 620 / 2977
+  document.getElementById("twzw-btn-1").style.top = btn1Height + 'px'
+
+  var btn2Height = h * 2750 / 2977
+  document.getElementById("twzw-btn-2").style.top = btn2Height + 'px'
+</script>
+</body>
+
+</html>
