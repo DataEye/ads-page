@@ -8,8 +8,8 @@
   <meta content="telephone=no,email=no" name="format-detection">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <title>塔王之王</title>
-  <link href="css/main.css" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="./lib/js/swiper.min.css">
+  <link href="../swipe/css/main.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="../swipe/lib/js/swiper.min.css">
   <style>
     .swiper-container {}
 
@@ -46,7 +46,7 @@
   <div style="height:200px"></div>
   <div class="fexid-btn">
     <div class="ads-row tool-head">
-      <div class="td item-pic"><img src="img/twzw-logo-small.png" alt="塔王之王"></div>
+      <div class="td item-pic"><img src="../swipe/img/twzw-logo.png" alt="塔王之王"></div>
       <div class="td item-info">
         <h2>塔王之王</h2>
         <div class="ads-row p"><span>塔防</span></div>
@@ -54,19 +54,19 @@
         <!-- <div class="ads-row p"> 84.2M 300W+下载 <img src="img/start_icon.png"><img src="img/start_icon.png"><img src="img/start_icon.png"><img src="img/start_icon.png"><img src="img/start_icon.png"></div> -->
       </div>
     </div>
-    <a data-href="#" class="btn game-download-link" id="downloadFile"><img src="img/icon_1.png"> 下载游戏</a>
+    <a data-href="http://res.digitcube.net/assets/twzw/aibei_twzw_10_1.15.2_197.apk" class="btn game-download-link" id="downloadFile"><img src="../swipe/img/icon_1.png"> 下载游戏</a>
   </div>
   <div class="swiper-container swiper-container-horizontal">
     <!-- Additional required wrapper -->
     <div class="swiper-wrapper">
       <!-- Slides -->
-      <div class="swiper-slide space swiper-slide-active" style="width: 50%;"><img src="img/01-small.jpg"></div>
-      <div class="swiper-slide space swiper-slide-next" style="width: 50%;"><img src="img/02-small.jpg"></div>
-      <!--<div class="swiper-slide   space" style="width: 674.5px;"><img src="img/03-samll.jpg"></div>-->
+      <div class="swiper-slide space swiper-slide-active" style="width: 674.5px;"><img src="../swipe/img/01.jpg"></div>
+      <div class="swiper-slide space swiper-slide-next" style="width: 674.5px;"><img src="../swipe/img/02.jpg"></div>
+      <div class="swiper-slide   space" style="width: 674.5px;"><img src="../swipe/img/03.jpg"></div>
     </div>
     <!-- If we need navigation buttons -->
-    <!--<div class="swiper-button-prev swiper-button-disabled"></div>-->
-    <!--<div class="swiper-button-next"></div>-->
+    <div class="swiper-button-prev swiper-button-disabled"></div>
+    <div class="swiper-button-next"></div>
   </div>
   <div class="ads-row tool-content">
     <div class="text-title">内容摘要</div>
@@ -161,7 +161,7 @@
     </div>
   </div>
 </div>
-<!--<script src="./lib/js/swiper.min.js"></script>-->
+<script src="./lib/js/swiper.min.js"></script>
 <!--   <script type="text/javascript">
   var _py = _py || [];
   _py.push(['a', 'jos..OW-TMvv8enLxUM-ohs69jX']);
@@ -186,7 +186,7 @@
   function eventCount(type) {
     var search = document.location.search.slice(1)
     if (search !== '') {
-      var info = 'page-id:twzw-d-01-aibei_twzw_15_1.15.2_197 page-assets-id:twzw-d-01-aibei_twzw_15_1.15.2_197 event-id:' + type + 'uid:' + search
+      var info = 'page-id:twzw-d-01-aibei_twzw_10_1.15.2_197 page-assets-id:twzw-d-01-aibei_twzw_10_1.15.2_197 event-id:' + type + 'uid:' + search
       var img = new Image()
       img.src = 'http://119.147.212.250:9191/log/js?data=' + encodeURIComponent(info)
     }
@@ -194,39 +194,38 @@
   function downloadFile() {
     eventCount('download')
     // pyRegisterCvt()
-    MtaH5.clickStat('download-twzw-d-01-aibei_twzw_15_1.15.2_197')
+    MtaH5.clickStat('download-twzw-d-01-aibei_twzw_10_1.15.2_197')
   }
   document.addEventListener('DOMContentLoaded', function(event) {
     eventCount('load')
   })
-  var btn = document.querySelector('body')
+  var btn = document.querySelector('#downloadFile')
   btn.addEventListener('click', function() {
     downloadFile()
-    window.open('http://res.digitcube.net/assets/twzw/aibei_twzw_15_1.15.2_197.apk')
   })
 </script>
-<!--<script>-->
-<!--void-->
+<script>
+  void
 
-<!--function() {-->
-<!--var mySwiper = new Swiper('.swiper-container', {-->
-<!--// Optional parameters-->
-<!--direction: 'horizontal',-->
-<!--loop: false,-->
-<!--slidesPerView: 2,-->
+          function() {
+            var mySwiper = new Swiper('.swiper-container', {
+              // Optional parameters
+              direction: 'horizontal',
+              loop: false,
+              slidesPerView: 2,
 
-<!--// Navigation arrows-->
-<!--nextButton: '.swiper-button-next',-->
-<!--prevButton: '.swiper-button-prev',-->
-<!--})-->
+              // Navigation arrows
+              nextButton: '.swiper-button-next',
+              prevButton: '.swiper-button-prev',
+            })
 
-<!--if (location.protocol.indexOf('http') > -1) {-->
-<!--swiper.on('slideChangeStart', function() {-->
-<!--MtaH5.clickStat('swipe-twzw-d-01-aibei_twzw_15_1.15.2_197')-->
-<!--})-->
+            if (location.protocol.indexOf('http') > -1) {
+              mySwiper.on('slideChangeStart', function() {
+                MtaH5.clickStat('swipe-twzw-d-01-aibei_twzw_10_1.15.2_197')
+              })
 
-<!--} else {-->
-<!--console.log('Local file view')-->
-<!--}-->
-<!--}()-->
-<!--</script>-->
+            } else {
+              console.log('Local file view')
+            }
+          }()
+</script>

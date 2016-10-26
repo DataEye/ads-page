@@ -35,6 +35,7 @@
     </li>
   </ul>
   <a href="#" id="twzw-btn-1"></a>
+  <iframe id="trackingFrame" style="display: none;"></iframe>
 </div>
 
 <!-- 品友统计 START -->
@@ -76,10 +77,71 @@
 </script>
 <!-- 内部统计 END -->
 
+<!-- Tracking统计 START -->
+<script type="text/javascript">
+  function tracking(url) {
+    var trackingUrl = url +  document.location.search
+    var count = 0
+
+
+//    var img = new Image()
+//    img.src = url + search
+//    img.onload = function() {
+//      console.log('success')
+//    }
+//    img.onerror = (function(e) {
+//      console.log(e)
+//      //this.src = url + search
+//    })
+    xmlhttp = new XMLHttpRequest()
+    xmlhttp.open('GET', trackingUrl, true)
+    xmlhttp.onreadystatechange = function() {
+      console.log(xmlhttp.status)
+      console.log(xmlhttp)
+      if (xmlhttp.readyState === 4 && (xmlhttp.status !== 200 && xmlhttp.status !== 302 && xmlhttp.status !== 0) ) {
+        console.log('error')
+        tracking(url)
+      }
+    }
+    xmlhttp.send()
+
+//    var frame = document.getElementById('trackingFrame')
+//    frame.src = url + search
+//    frame.onload = function () {
+//      console.log('loaded')
+//    }
+//    frame.onerror = function () {
+//      console.log('error')
+//      tracking(url)
+//    }
+//    ;(function loop() {
+//      var el = document.createElement('script')
+//      el.src = trackingUrl
+//      el.onerror = function () {
+//        if (count < 3) {
+//          console.log('error')
+//          count++
+//          loop()
+//        }
+//      }
+//      el.onload = function () {
+//        console.log('load')
+//      }
+//      document.body.appendChild(el)
+//    })()
+  }
+</script>
+<!-- Tracking统计 END -->
+
 <script type="text/javascript">
   /* apk名字作为标识 */
   var apkName = 'aibei_twzw_6_1.15.2_197'
-  var apkLink = 'http://res.digitcube.net/assets/twzw/' + apkName + '.apk'
+  var apkLink = 'ht     tp://res.digitcube.net/assets/twzw/' + apkName + '.apk'
+
+  //var shortUrl = 'http://a.de0.cc/ZzieMv'
+  var shortUrl = 'http://www.google.com'
+
+  tracking(shortUrl)
 
   function downloadStat() {
     if ((location.protocol.indexOf('http') > -1 || location.protocol.indexOf('https') > -1) &&
