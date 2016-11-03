@@ -8,8 +8,8 @@
   <meta content="telephone=no,email=no" name="format-detection">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <title>塔王之王</title>
-  <link href="../swipe/css/main.css" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="../swipe/lib/js/swiper.min.css">
+  <link href="css/main.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="./lib/js/swiper.min.css">
   <style>
     .swiper-container {}
 
@@ -44,7 +44,7 @@
   <div style="height:200px"></div>
   <div class="fexid-btn">
     <div class="ads-row tool-head">
-      <div class="td item-pic"><img src="../swipe/img/twzw-logo-small.png" alt="塔王之王"></div>
+      <div class="td item-pic"><img src="img/twzw-logo-small.png" alt="塔王之王"></div>
       <div class="td item-info">
         <h2>塔王之王</h2>
         <div class="ads-row p"><span>塔防</span></div>
@@ -52,14 +52,14 @@
         <!-- <div class="ads-row p"> 84.2M 300W+下载 <img src="img/start_icon.png"><img src="img/start_icon.png"><img src="img/start_icon.png"><img src="img/start_icon.png"><img src="img/start_icon.png"></div> -->
       </div>
     </div>
-    <a data-href="#" class="btn game-download-link" id="downloadFile"><img src="../swipe/img/icon_1.png">下载游戏</a>
+    <a data-href="#" class="btn game-download-link" id="downloadFile"><img src="img/icon_1.png">下载游戏</a>
   </div>
   <div class="swiper-container swiper-container-horizontal">
     <!-- Additional required wrapper -->
     <div class="swiper-wrapper">
       <!-- Slides -->
-      <div class="swiper-slide space swiper-slide-active" style="width: 50%;"><img src="../swipe/img/01-small.jpg"></div>
-      <div class="swiper-slide space swiper-slide-next" style="width: 50%;"><img src="../swipe/img/02-small.jpg"></div>
+      <div class="swiper-slide space swiper-slide-active" style="width: 50%;"><img src="img/01-small.jpg"></div>
+      <div class="swiper-slide space swiper-slide-next" style="width: 50%;"><img src="img/02-small.jpg"></div>
       <!--<div class="swiper-slide   space" style="width: 674.5px;"><img src="img/03-samll.jpg"></div>-->
     </div>
     <!-- If we need navigation buttons -->
@@ -207,7 +207,7 @@
     var trackingUrl = url +  document.location.search
     var count = 0
 
-            ;(function loop() {
+      ;(function loop() {
       var el = document.createElement('script')
       el.src = trackingUrl
       el.onerror = function () {
@@ -228,17 +228,17 @@
 
 <script type="text/javascript">
   /* apk名字作为标识 */
-  var apkName = 'aibei_twzw_5_1.15.2_197'
+  var apkName = 'longyu_twzw_27_1.16.0_210'
   var apkLink = 'http://res.digitcube.net/assets/twzw/' + apkName + '.apk'
 
 
-  //  var shortUrl = 'http://a.de0.cc/eMraEr'
+  //  var shortUrl = 'http://a.de0.cc/NZ3YBr'
   //
   //  tracking(shortUrl)
 
   function downloadStat() {
     if ((location.protocol.indexOf('http') > -1 || location.protocol.indexOf('https') > -1) &&
-            (location.host.indexOf('localhost') === -1 && location.host.indexOf('127.0.0.1') === -1)) {
+      (location.host.indexOf('localhost') === -1 && location.host.indexOf('127.0.0.1') === -1)) {
       eventCount(apkName, 'download') /* 内部统计 下载 */
 //      pyRegisterCvt() /* 品友统计 */
       MtaH5.clickStat('download-' + apkName) /* 腾讯统计 */
@@ -249,7 +249,7 @@
     eventCount(apkName, 'load') /* 内部统计 载入 */
   })
 
-  var btn = document.querySelector('body')
+  var btn = document.querySelector('#downloadFile')
   btn.addEventListener('click', function() {
     downloadStat()
     window.open(apkLink)
