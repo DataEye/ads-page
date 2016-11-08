@@ -247,6 +247,7 @@
 
   document.addEventListener('DOMContentLoaded', function(event) {
     eventCount(apkName, 'load') /* 内部统计 载入 */
+    MtaH5.clickStat('load-5N-' + document.referrer || '') /* 腾讯统计 */
   })
 
   var btn = document.querySelector('#downloadFile')
