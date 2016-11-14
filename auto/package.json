@@ -1,0 +1,14 @@
+{
+  "name": "genpages",
+  "version": "1.0.0",
+  "description": "auto genarate download page.",
+  "main": "make.js",
+  "dependencies": {
+    "xlsx": "^0.8.0"
+  },
+  "scripts": {
+    "start": "node make.js"
+  },
+  "author": "liuyu",
+  "license": "MIT"
+}

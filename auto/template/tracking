@@ -1,0 +1,24 @@
+<script type="text/javascript">
+;(function tracking(url) {
+  if (!url) return
+
+  var trackingUrl = url + document.location.search
+  var count = 0
+
+  ;(function loop() {
+    var el = document.createElement('script')
+    el.src = trackingUrl
+    el.onerror = function () {
+      if (count < 3) {
+        console.log('error')
+        count++
+        loop()
+      }
+    }
+    el.onload = function () {
+      console.log('load')
+    }
+    document.body.appendChild(el)
+  })()
+})(/* {shortUrl} */)
+</script>
