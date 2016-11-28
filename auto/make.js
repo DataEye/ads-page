@@ -25,6 +25,7 @@ const getShortUrl = (urls, url) => {
   for (const i in urls) {
     if (i.match(url) !== null) return urls[i]
   }
+  console.log(`$(url) 没有匹配的短链:(`)
   return ''
 }
 
@@ -71,7 +72,7 @@ const make = (project) => {
       replace('/* {apkName} */', `var apkName='${project['包号']}'`)
     }).then(() => {
       writeFileAsync(`./${timeStamp}/${fileName}`, result).then(() => {
-        console.log('Sucess')
+        console.log(`Make ${fileName} successfully:)`)
       }, (err) => {
         console.log(err)
       })
