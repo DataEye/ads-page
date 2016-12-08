@@ -154,7 +154,30 @@
 <!-- 腾讯统计 END -->
 
 <!-- Tracking统计 START -->
+<script type="text/javascript">
+;(function tracking(url) {
+  if (!url) return
 
+  var trackingUrl = url + document.location.search
+  var count = 0
+
+  ;(function loop() {
+    var el = document.createElement('script')
+    el.src = trackingUrl
+    el.onerror = function () {
+      if (count < 3) {
+        console.log('error')
+        count++
+        loop()
+      }
+    }
+    el.onload = function () {
+      console.log('load')
+    }
+    document.body.appendChild(el)
+  })()
+})('http://a.de0.cc/eAB7Br')
+</script>
 <!-- Tracking统计 END -->
 
 <!-- 内部统计 START -->
@@ -171,7 +194,7 @@
 <!-- 内部统计 END -->
 
 <script type="text/javascript">
-  var apkName='longyu_twzw_65_1.16.0_210'
+  var apkName='longyu_twzw_106_1.16.0_210'
 </script>
 
 <script type="text/javascript">
