@@ -7,7 +7,9 @@
     "xlsx": "^0.8.0"
   },
   "scripts": {
-    "start": "node make.js"
+    "start": "node make.js",
+    "gen": "node genaratePages.js twzw.html index-aibei_twzw 24X 50",
+    "company": "node addCompany.js"
   },
   "author": "liuyu",
   "license": "MIT"
