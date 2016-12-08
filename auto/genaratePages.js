@@ -3,7 +3,7 @@ const fs = require('fs')
 const copy = (src, dst) => {
   fs.writeFile(dst, fs.readFileSync(src), (err) => {
     if (err) console.log(err)
-    else console.log(`Create: ${dst}`)
+    else console.log(`${dst}`)
   })
 }
 

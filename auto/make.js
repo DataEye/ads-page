@@ -49,7 +49,8 @@ const make = (project) => {
   const timeStamp = (new Date()).toLocaleDateString()
   const templateFile = config.templateFile || './template.html'
   const templatePath = config.templatePath || 'twzw'
-  const fileName = project['链接'].match(/(?=[^\/]+\.html$).+/)[0]
+  const fullUrl = project['链接']
+  const fileName = fullUrl.match(/(?=[^\/]+\.html$).+/)[0]
 
   const p1 = project['是否短链统计'].trim() === '是' && readFileAsync('./template/tracking').then((tracking) => {
     trackingCode = tracking.replace('/* {shortUrl} */', `'${getShortUrl(urls, fileName)}'`)
@@ -72,7 +73,7 @@ const make = (project) => {
       replace('/* {apkName} */', `var apkName='${project['包号']}'`)
     }).then(() => {
       writeFileAsync(`./${timeStamp}/${fileName}`, result).then(() => {
-        console.log(`Make ${fileName} successfully:)`)
+        console.log(`${fullUrl}`)
       }, (err) => {
         console.log(err)
       })
