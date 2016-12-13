@@ -8,10 +8,10 @@ const refreshCDN = require('./refresh')
 const connection = new require('ssh2').Client()
 
 const settings = {
-   host: '112.74.91.38',
+   host: '',
    port: 22,
    username: 'root',
-   password: 'dcAT2013123121'
+   password: ''
 }
 
 let sftpObject
