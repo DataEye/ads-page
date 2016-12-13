@@ -179,12 +179,14 @@
   /* apk名字作为标识 */
   var apkLink = 'http://res.digitcube.net/assets/twzw/' + apkName + '.apk'
 
+  var fileName = location.pathname.split('/').pop().replace('.html', '')
+
   function downloadStat() {
     if ((location.protocol.indexOf('http') > -1 || location.protocol.indexOf('https') > -1) &&
       (location.host.indexOf('localhost') === -1 && location.host.indexOf('127.0.0.1') === -1)) {
       eventCount(apkName, 'download') /* 内部统计 下载 */
       if (!!window.pyRegisterCvt) pyRegisterCvt() /* 品友统计 */
-      if (!!window.MtaH5) MtaH5.clickStat('download-' + apkName) /* 腾讯统计 */
+      if (!!window.MtaH5) MtaH5.clickStat('download-' + apkName + '/' + fileName) /* 腾讯统计 */
     }
   }
 

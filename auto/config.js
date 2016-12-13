@@ -1,6 +1,7 @@
 const config = {
-  templateFile: './template.html',
+  templateFile: './template/twzw/template.html',
   templatePath: 'twzw',
+  configPath: 'twzw',
 }
 
 module.exports = config

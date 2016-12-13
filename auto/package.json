@@ -4,12 +4,16 @@
   "description": "auto genarate download page.",
   "main": "make.js",
   "dependencies": {
-    "xlsx": "^0.8.0"
+    "co": "^4.6.0",
+    "ssh2": "^0.5.4",
+    "xlsx": "^0.8.0",
+    "crypto": "^0.0.3",
+    "urllib": "^2.17.1"
   },
   "scripts": {
     "start": "node make.js",
-    "gen": "node genaratePages.js twzw.html index-aibei_twzw 24X 50",
-    "company": "node addCompany.js"
+    "gen": "node pages.js ./template/twzw/twzw.html index-aibei_twzw 32Q 50",
+    "company": "node company.js"
   },
   "author": "liuyu",
   "license": "MIT"

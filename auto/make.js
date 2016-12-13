@@ -1,40 +1,19 @@
 const fs = require('fs')
-const XLSX = require('xlsx')
-const config = require('./config.js')
-const urls = require('./shortUrl.js')
-
-const readFileAsync = (file, encoding='utf8') => {
-  return new Promise((resolve, reject) => {
-    fs.readFile(file, encoding, (err, data) => {
-      if (err) return reject(err)
-      resolve(data)
-    })
-  })
-}
-
-const writeFileAsync = (file, result, encoding='utf8') => {
-  return new Promise((resolve, reject) => {
-    fs.writeFile(file, result, encoding, (err, data) => {
-      if (err) return reject(err)
-      resolve(data)
-    })
-  })
-}
+const xlsxToJSON = require('./lib/xlsxToJSON')
+const {readFileAsync, writeFileAsync} = require('./lib/fs')
+const config = require('./config')
+const refreshCDN = require('./refresh')
+const upload = require('./lib/upload')
 
 const getShortUrl = (urls, url) => {
-  for (const i in urls) {
-    if (i.match(url) !== null) return urls[i]
+  for (const i of urls) {
+    if (i.directURLs.trim().match(url) !== null) return i.shortURLs.trim()
   }
   console.log(`$(url) 没有匹配的短链:(`)
   return ''
 }
 
-const getProject = (projectFile = './project.xlsx') => {
-  const workSheetsFromFile = XLSX.readFile(projectFile)
-  const first_sheet_name = workSheetsFromFile.SheetNames[0];
-  const worksheet = workSheetsFromFile.Sheets[first_sheet_name]
-  return XLSX.utils.sheet_to_json(worksheet)
-}
+const configPath = config.configPath
 
 const make = (project) => {
   if (project['落地页类型'].trim() !== '应用下载类') {
@@ -47,10 +26,13 @@ const make = (project) => {
   let pinyouCode = ''
   let result = ''
   const timeStamp = (new Date()).toLocaleDateString()
-  const templateFile = config.templateFile || './template.html'
-  const templatePath = config.templatePath || 'twzw'
+  const templateFile = config.templateFile
+  const templatePath = config.templatePath
   const fullUrl = project['链接']
   const fileName = fullUrl.match(/(?=[^\/]+\.html$).+/)[0]
+  const remotePath = '/usr/local/nginx/html/res.digitcube.net/ads-page/swipe'
+
+  const urls = xlsxToJSON(`./config/${configPath}/shortUrlMatch.xlsx`)
 
   const p1 = project['是否短链统计'].trim() === '是' && readFileAsync('./template/tracking').then((tracking) => {
     trackingCode = tracking.replace('/* {shortUrl} */', `'${getShortUrl(urls, fileName)}'`)
@@ -73,6 +55,12 @@ const make = (project) => {
       replace('/* {apkName} */', `var apkName='${project['包号']}'`)
     }).then(() => {
       writeFileAsync(`./${timeStamp}/${fileName}`, result).then(() => {
+        upload(fileName, `./${timeStamp}`, remotePath)
+        refreshCDN(fullUrl).then(() => {
+          console.log('Refresh CDN succesfully!')
+        }).catch(() => {
+          console.error('Refresh CDN Error!')
+        })
         console.log(`${fullUrl}`)
       }, (err) => {
         console.log(err)
@@ -85,7 +73,7 @@ const make = (project) => {
 }
 
 const main = () => {
-  getProject().forEach((v) => {
+  xlsxToJSON(`./config/${configPath}/project.xlsx`).forEach((v) => {
     make(v)
   })
 }
