@@ -2,10 +2,10 @@ const co = require('co')
 const SDK = require('./lib/aliyun-cdn-sdk/sdk')
 
 const CONFIG = {
-  accessKeyId: 'ACSRgR2efE0nmhIJ',
-  appSecret: 'BD4Pq0Aanj',
-  endpoint: 'https://cdn.aliyuncs.com',
-  apiVersion: '2014-11-11',
+  accessKeyId: '',
+  appSecret: '',
+  endpoint: '',
+  apiVersion: '',
 }
 
 const makeObjectPath = (urls) => {
