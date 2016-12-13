@@ -2,10 +2,10 @@ const fs = require('fs')
 const connection = new require('ssh2').Client()
 
 const settings = {
-   host: '112.74.91.38',
+   host: '',
    port: 22,
    username: 'root',
-   password: 'dcAT2013123121'
+   password: ''
 }
 
 const upload = (files = [], localPath = './', remotePath) => {
