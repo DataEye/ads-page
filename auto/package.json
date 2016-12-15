@@ -1,19 +1,20 @@
 {
   "name": "genpages",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "auto genarate download page.",
   "main": "make.js",
   "dependencies": {
     "co": "^4.6.0",
-    "ssh2": "^0.5.4",
-    "xlsx": "^0.8.0",
+    "colors": "^1.1.2",
     "crypto": "^0.0.3",
-    "urllib": "^2.17.1"
+    "ssh2": "^0.5.4",
+    "urllib": "^2.17.1",
+    "xlsx": "^0.8.0"
   },
   "scripts": {
     "start": "node make.js",
-    "gen": "node pages.js ./template/twzw/twzw.html index-aibei_twzw 32Q 50",
-    "company": "node company.js"
+    "company": "node company.js",
+    "upload": "node upload.js"
   },
   "author": "liuyu",
   "license": "MIT"

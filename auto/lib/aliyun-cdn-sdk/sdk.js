@@ -70,7 +70,7 @@ class CDN {
     const params = sortObjectKeys(Object.assign({}, this.commonParams, args, {
       Action: action,
       TimeStamp: (new Date().toISOString()).replace(/\.\d{3}/, ''),
-      SignatureNonce: Math.round(Math.random() * 10000),
+      SignatureNonce: Math.round(Math.random() * 1000000),
     }));
 
     let headerString = '';

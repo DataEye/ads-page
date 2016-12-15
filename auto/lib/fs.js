@@ -9,13 +9,26 @@ const readFileAsync = (file, encoding='utf8') => {
   })
 }
 
-const writeFileAsync = (file, result, encoding='utf8') => {
+const writeFileAsync = (file, data, encoding='utf8') => {
   return new Promise((resolve, reject) => {
-    fs.writeFile(file, result, encoding, (err, data) => {
+    fs.writeFile(file, data, encoding, (err, result) => {
       if (err) return reject(err)
-      resolve(data)
+      resolve(result)
     })
   })
 }
 
-module.exports = {readFileAsync, writeFileAsync}
+const appendFileAsync = (file, data, options) => {
+  return new Promise((resolve, reject) => {
+    fs.appendFile(file, data, options, (err, result) => {
+      if (err) return reject(err)
+      resolve(result)
+    })
+  })
+}
+
+module.exports = {
+  readFileAsync,
+  writeFileAsync,
+  appendFileAsync,
+}
