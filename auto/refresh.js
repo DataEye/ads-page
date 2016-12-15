@@ -1,6 +1,16 @@
 const co = require('co')
 const SDK = require('./lib/aliyun-cdn-sdk/sdk')
+<<<<<<< HEAD
 const {cdnSettings} = require('./settings')
+=======
+
+const CONFIG = {
+  accessKeyId: '',
+  appSecret: '',
+  endpoint: '',
+  apiVersion: '',
+}
+>>>>>>> e0e9cb9b34b46b279de83d2b972ab850696bb118
 
 const makeObjectPath = (urls) => {
   if (Array.isArray(urls)) {
